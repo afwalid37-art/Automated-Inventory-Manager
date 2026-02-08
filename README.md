@@ -1,44 +1,86 @@
-🏭 Automated Inventory Manager v2.0 (Python, API & Excel)
-📋 Overview
-This project is a Smart Supply Chain Automation tool designed for SMEs to eliminate manual monitoring.
+# 🏭 Automated Inventory Manager v2.0 (Python, API & Excel)
 
-The system acts as a "Digital Supervisor": it analyzes stock levels via Pandas, generates professional XlsxWriter reports, and—most importantly—uses the Telegram Bot API to send real-time alerts to managers when stock reaches critical levels.
+![Python](https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge&logo=python&logoColor=white) 
+![Pandas](https://img.shields.io/badge/Pandas-Data_Analysis-150458?style=for-the-badge&logo=pandas&logoColor=white) 
+![Telegram](https://img.shields.io/badge/Telegram-API-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)
 
-🚀 Key Features
-Real-Time Telegram Alerts: Integrates with the Telegram Bot API to push instant notifications for "CRITICAL" stock levels directly to mobile devices.
+## 📋 Overview
+This project is a **Smart Supply Chain Automation** tool designed for SMEs to eliminate manual monitoring.
 
-Automated Decision Logic: Uses vectorized Pandas operations to calculate re-order quantities and categorize urgency (CRITICAL vs. Priority).
+The system acts as a **"Digital Supervisor"**: it analyzes stock levels via **Pandas**, generates professional **XlsxWriter** reports, and—most importantly—uses the **Telegram Bot API** to send real-time alerts to managers when stock reaches critical levels.
 
-Financial Intelligence: Automatically calculates total procurement budgets in Moroccan Dirham (DH) for executive review.
+## 🚀 Key Features
+* **📱 Real-Time Telegram Alerts:** Integrates with the Telegram Bot API to push instant notifications for "CRITICAL" stock levels directly to mobile devices.
+* **🧠 Automated Decision Logic:** Uses vectorized Pandas operations to calculate re-order quantities and categorize urgency (`CRITICAL` vs. `Priority`).
+* **💰 Financial Intelligence:** Automatically calculates total procurement budgets in Moroccan Dirham (DH) for executive review.
+* **📊 Professional Reporting:** Programmatically generates formatted `.xlsx` Purchase Orders with conditional formatting, custom borders, and currency symbols.
 
-Professional Reporting: Programmatically generates formatted .xlsx Purchase Orders with conditional formatting, custom borders, and currency symbols.
+## 🛠️ Technical Stack
+* **Language:** Python 3.12
+* **API Integration:** Telegram Bot API (via `requests`)
+* **Data Analysis:** Pandas (Vectorization & DataFrames)
+* **Reporting:** XlsxWriter
+* **Security:** `python-dotenv` for environment variable management
 
-🛠️ Technical Stack
-Python 3.12
+## 📂 Project Structure
+| File | Description |
+| :--- | :--- |
+| `smart_restock.py` | The core engine that analyzes stock and triggers Telegram alerts. |
+| `alerts.py` | Modular API handler for sending messages. |
+| `generate_inventory.py` | Script to simulate inventory data for Moroccan market testing. |
+| `.env.example` | Template for configuring your API keys safely. |
+| `requirements.txt` | List of dependencies. |
 
-API Integration: Telegram Bot API (via requests)
+## ⚙️ Setup & Installation
 
-Data Analysis: Pandas (Vectorization & DataFrames)
+### 1. Clone the Repository
+bash
+git clone [https://github.com/afwalid37-art/Automated-Inventory-Manager.git](https://github.com/afwalid37-art/Automated-Inventory-Manager.git)
+cd Automated-Inventory-Manager
 
-Reporting: XlsxWriter
 
-Environment Management: python-dotenv for secure API credential handling
 
-📂 Project Structure
-restock.py: The core engine that runs analysis and triggers alerts.
+### 2. Install Dependencies
 
-alerts.py: Modular API handler for Telegram notifications.
+bash
+pip install -r requirements.txt
 
-generate.py: Script to simulate inventory data for Moroccan market testing.
 
-.env.example: Template for secure API token configuration.
+### 3. Configure Security (.env)
 
-⚙️ Setup & Security
-Install dependencies: pip install -r requirements.txt.
+1. Rename the file `.env.example` to `.env`.
+2. Open `.env` and add your Telegram credentials (get them from **@BotFather**):
 
-Create a .env file and add your TELEGRAM_TOKEN and CHAT_ID.
+ini
+TELEGRAM_TOKEN=your_token_here
+TELEGRAM_CHAT_ID=your_chat_id_here
 
-Security Note: The .env file is included in .gitignore to prevent leaking API keys on public repositories.
+
+## 🏃‍♂️ How to Run
+
+**Step 1: Generate Mock Data**
+Create a fresh inventory file to test the system.
+
+bash
+python generate.py
+
+
+
+**Step 2: Run the Manager**
+Analyze the stock and trigger alerts.
+
+bash
+python restock.py
+
+
+*You will see a "✅ Alert sent" confirmation in the terminal and receive a notification on your phone.*
+
+## 📸 Screenshots
+
+*(Place a screenshot here of your Terminal running the script and the Telegram notification on your phone)*
 
 ## 👨‍💻 Author
-**El Walid El Alaoui** *Data Engineer | Microsoft Azure & SQL Specialist* [LinkedIn Profile](https://www.linkedin.com/in/el-walid-el-alaoui-fels-51491538b/)
+
+**El Walid El Alaoui**
+*Data Engineer | Microsoft Azure & SQL Specialist*
+[LinkedIn Profile](https://www.linkedin.com/in/el-walid-el-alaoui-fels-51491538b/)
