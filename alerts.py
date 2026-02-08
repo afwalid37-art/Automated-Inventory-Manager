@@ -1,8 +1,8 @@
 import requests
 
 def send_telegram_alert(product_name, current_stock):
-    TOKEN = "8413141879:AAFZjMhnA0ug_cq9HNhKyXIl_lDlgQGcJYw"
-    CHAT_ID = "5615894394"
+    TOKEN = "TELEGRAM_TOKEN"
+    CHAT_ID = "your_chat_id"
     message = f"⚠️ ALERTE STOCK : {product_name} est presque en rupture ({current_stock} unités restantes) ! 🛒 À commander d'urgence."
     
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={CHAT_ID}&text={message}"
@@ -14,4 +14,5 @@ def send_telegram_alert(product_name, current_stock):
         else:
             print("❌ Failed to send alert")
     except Exception as e:
+
         print(f"⚠️ Error: {e}")
