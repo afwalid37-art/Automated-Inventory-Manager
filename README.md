@@ -77,7 +77,7 @@ python restock.py
 
 ## 📸 Screenshots
 
-*(Place a screenshot here of your Terminal running the script and the Telegram notification on your phone)*
+<img width="817" height="283" alt="smart_restock_terminal" src="https://github.com/user-attachments/assets/ed8721e7-d599-4fb5-8e18-5475a1a790cb" />
 
 ## 👨‍💻 Author
 
