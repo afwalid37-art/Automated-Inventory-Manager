@@ -1,4 +1,18 @@
+# Security: Never upload your private API keys
 .env
-__pycache__/
+
+# Environment: Never upload the virtual environment folder
 venv/
+.venv/
+
+# Python: Ignore temporary cache files
+__pycache__/
+*.pyc
+
+# Data: Keep the structure, but ignore the actual reports
 output/*.xlsx
+output/*.csv
+
+# System: Ignore OS-specific files
+.DS_Store
+Thumbs.db
