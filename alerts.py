@@ -1,8 +1,12 @@
 import requests
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def send_telegram_alert(product_name, current_stock):
-    TOKEN = "TELEGRAM_TOKEN"
-    CHAT_ID = "your_chat_id"
+    TOKEN = os.getenv("TELEGRAM_TOKEN")
+    CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
     message = f"⚠️ ALERTE STOCK : {product_name} est presque en rupture ({current_stock} unités restantes) ! 🛒 À commander d'urgence."
     
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={CHAT_ID}&text={message}"
@@ -14,5 +18,4 @@ def send_telegram_alert(product_name, current_stock):
         else:
             print("❌ Failed to send alert")
     except Exception as e:
-
         print(f"⚠️ Error: {e}")
