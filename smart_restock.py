@@ -2,6 +2,7 @@ import pandas as pd
 from datetime import datetime
 import time
 from colorama import Fore, Style, init
+from alerts import send_telegram_alert
 
 init() # Initialisation des couleurs pour le terminal
 
@@ -10,9 +11,9 @@ print(Fore.CYAN + "🏭 DÉMARRAGE DU ROBOT D'APPROVISIONNEMENT (VERSION PRO)...
 # 1. CHARGEMENT
 print("📂 Lecture du stock actuel...")
 try:
-    df = pd.read_excel("Inventaire_Maroc.xlsx")
+    df = pd.read_excel("output/Inventaire_Maroc.xlsx")
 except FileNotFoundError:
-    print(Fore.RED + "❌ Erreur : Fichier 'Inventaire_Maroc.xlsx' introuvable." + Style.RESET_ALL)
+    print(Fore.RED + "❌ Erreur : Fichier 'output/Inventaire_Maroc.xlsx' introuvable." + Style.RESET_ALL)
     exit()
 
 # 2. ANALYSE & CALCULS (PANDAS)
@@ -54,6 +55,22 @@ budget_global = df_commande['Budget_Total_DH'].sum()
 
 print(Fore.YELLOW + f"⚠️  ALERTE : {total_articles} articles à commander.")
 print(f"💰 Budget Estimé : {budget_global:,.2f} DH" + Style.RESET_ALL)
+
+# --- ENVOI DES ALERTES TELEGRAM ---
+if not df_commande.empty:
+    print(Fore.MAGENTA + "📱 Envoi des alertes Telegram en cours..." + Style.RESET_ALL)
+    for index, row in df_commande.iterrows():
+        # On récupère les infos importantes
+        nom_produit = row['Designation']
+        stock = row['Stock_Actuel']
+        urgence = row['Statut_Urgence']
+        
+        # On appelle la fonction importée depuis alerts.py
+        # Le message sera personnalisé selon le statut (CRITIQUE ou Urgent)
+        send_telegram_alert(nom_produit, stock)
+    print(Fore.GREEN + "✅ Toutes les alertes ont été envoyées." + Style.RESET_ALL)
+else:
+    print(Fore.GREEN + "✅ Aucun besoin d'approvisionnement détecté. Pas d'alertes." + Style.RESET_ALL)
 
 # 3. GÉNÉRATION EXCEL AVANCÉE (XLSXWRITER)
 fichier_sortie = f"Bon_Commande_{datetime.now().strftime('%Y-%m-%d')}.xlsx"
