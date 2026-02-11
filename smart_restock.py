@@ -83,8 +83,6 @@ with pd.ExcelWriter(fichier_sortie, engine='xlsxwriter') as writer:
     workbook = writer.book
     worksheet = writer.sheets['Commande Fournisseurs']
     
-    # --- DÉFINITION DES STYLES (Le "Look" Pro) ---
-    
     # Titre Principal (Gros, Gras, Bleu)
     style_titre = workbook.add_format({
         'bold': True, 'font_size': 16, 'font_color': '#1F497D', 'align': 'left'
@@ -158,3 +156,4 @@ with pd.ExcelWriter(fichier_sortie, engine='xlsxwriter') as writer:
         worksheet.write(excel_row, 5, df_commande.iloc[row_num]['Qte_A_Commander'], style_bordure)
 
 print(Fore.GREEN + "✅ SUCCÈS ! Le fichier est prêt à être imprimé." + Style.RESET_ALL)
+
