@@ -36,6 +36,7 @@ The system acts as a **"Digital Supervisor"**: it analyzes stock levels via **Pa
 ### 1. Clone the Repository
 bash
 git clone [https://github.com/afwalid37-art/Automated-Inventory-Manager.git](https://github.com/afwalid37-art/Automated-Inventory-Manager.git)
+
 cd Automated-Inventory-Manager
 
 
