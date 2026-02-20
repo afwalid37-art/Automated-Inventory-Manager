@@ -82,6 +82,6 @@ python restock.py
 
 ## 👨‍💻 Author
 
-**El Walid El Alaoui**
+**El Walid El Alaoui Fels**
 *Data Engineer | Microsoft Azure & SQL Specialist*
 [LinkedIn Profile](https://www.linkedin.com/in/el-walid-el-alaoui-fels-51491538b/)
