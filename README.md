@@ -74,6 +74,11 @@ bash
 python restock.py
 
 
+## ⏰ Automated Deployment (Zero-Touch)
+This tool is designed to run silently in the background without human intervention. 
+It is configured via **Windows Task Scheduler** to execute automatically on system startup, ensuring managers receive their Telegram alerts and Excel reports the moment they open their laptops.
+
+
 *You will see a "✅ Alert sent" confirmation in the terminal and receive a notification on your phone.*
 
 ## 📸 Screenshots
