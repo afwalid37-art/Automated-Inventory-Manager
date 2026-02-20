@@ -57,6 +57,24 @@ TELEGRAM_TOKEN=your_token_here
 TELEGRAM_CHAT_ID=your_chat_id_here
 
 
+3. Automate via Windows Task Scheduler (Production)
+To make the script run completely hands-free:
+
+1- Open Task Scheduler in Windows.
+
+2- Create a "Basic Task" (e.g., Daily_Restock_Alerts).
+
+3- Set the Trigger to "When I log on" or "Daily at 8:00 AM".
+
+4- Set the Action to "Start a program".
+
+  • Program/script: Point to your python.exe.
+
+  • Add arguments: Point to restock.py.
+
+  • Start in: The folder path of this repository.
+
+
 ## 🏃‍♂️ How to Run
 
 **Step 1: Generate Mock Data**
@@ -64,8 +82,6 @@ Create a fresh inventory file to test the system.
 
 bash
 python generate.py
-
-
 
 **Step 2: Run the Manager**
 Analyze the stock and trigger alerts.
@@ -75,6 +91,7 @@ python restock.py
 
 
 ## ⏰ Automated Deployment (Zero-Touch)
+
 This tool is designed to run silently in the background without human intervention. 
 It is configured via **Windows Task Scheduler** to execute automatically on system startup, ensuring managers receive their Telegram alerts and Excel reports the moment they open their laptops.
 
@@ -84,6 +101,7 @@ It is configured via **Windows Task Scheduler** to execute automatically on syst
 ## 📸 Screenshots
 
 <img width="817" height="283" alt="smart_restock_terminal" src="https://github.com/user-attachments/assets/ed8721e7-d599-4fb5-8e18-5475a1a790cb" />
+
 
 ## 👨‍💻 Author
 
