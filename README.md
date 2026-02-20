@@ -102,9 +102,14 @@ It is configured via **Windows Task Scheduler** to execute automatically on syst
 
 <img width="817" height="283" alt="smart_restock_terminal" src="https://github.com/user-attachments/assets/ed8721e7-d599-4fb5-8e18-5475a1a790cb" />
 
+![Clear Excel Result](output/excelscreen.png)
+![Telegram Mobile Alerts](output/TELEBOT.jpeg)
+![Scheduled Background Task](output/tasksche.png)
+
 
 ## 👨‍💻 Author
 
 **El Walid El Alaoui Fels**
 *Data Engineer | Microsoft Azure & SQL Specialist*
 [LinkedIn Profile](https://www.linkedin.com/in/el-walid-el-alaoui-fels-51491538b/)
+[Upwork](https://www.linkedin.com/in/el-walid-el-alaoui-fels-51491538b/)
