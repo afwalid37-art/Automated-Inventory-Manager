@@ -122,4 +122,4 @@ To make the script run completely hands-free, especially if hosted within a WSL 
 **El Walid El Alaoui Fels**
 *Data Engineer | Microsoft Stack & Automation Specialist*
 
-[LinkedIn Profile](https://www.linkedin.com/in/el-walid-el-alaoui-fels-51491538b/) | [Upwork](https://www.linkedin.com/in/el-walid-el-alaoui-fels-51491538b/)
+[LinkedIn Profile](https://www.linkedin.com/in/el-walid-el-alaoui-fels/) | [Upwork](https://www.upwork.com/freelancers/~01f4844810b3d78bf7)
